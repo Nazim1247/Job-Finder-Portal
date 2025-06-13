@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 import { signIn } from "next-auth/react"
 import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
 
 const LoginPage = () => {
     const router = useRouter();
@@ -11,11 +12,19 @@ const LoginPage = () => {
         const form = e.target;
         const email= form.email.value;
         const password= form.password.value;
+        toast("Submitting...")
         try {
-            await signIn("credentials", {email,password,callbackUrl: "/"})
-            router.push("/")
+           const response = await signIn("credentials", {email,password,callbackUrl: "/",redirect: false})
+           if(response.ok){
+            toast.success("Login Successfully!")
+               router.push("/")
+               form.reset();
+           }else{
+            toast.error("authentication failed")
+           }
         // console.log({email,password})
         } catch (error) {
+            toast.error("authentication failed")
             console.log(error)
         }
         
