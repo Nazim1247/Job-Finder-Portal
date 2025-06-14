@@ -9,10 +9,10 @@ const Navbar = () => {
   // console.log(session);
     const links = <div className='space-x-4'>
     <Link href="/">Home</Link>
-    <Link href="/find-jobs">Find Jobs</Link>
+    <Link href="/findJobs">Find Jobs</Link>
     <Link href="/postJobs">Post a Jobs</Link>
-    <Link href="/my-application">My Application</Link>
-    <Link href="/saved-jobs">Saved jobs</Link>
+    <Link href="/myApplication">My Application</Link>
+    <Link href="/savedJobs">Saved jobs</Link>
     
     </div>
     return (
