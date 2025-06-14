@@ -56,3 +56,4 @@ export async function GET() {
     return NextResponse.json({ message: "Failed to fetch jobs." }, { status: 500 });
   }
 }
+

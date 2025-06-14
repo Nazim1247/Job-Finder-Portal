@@ -1,8 +1,11 @@
 "use client";
+import { useSession } from 'next-auth/react';
 import React from 'react';
 import toast from 'react-hot-toast';
 
 const PostJobsPage = () => {
+  const {data:session} = useSession();
+  // console.log(session)
     const handleSubmit = async (e)=>{
         e.preventDefault();
         const form = e.target;
@@ -53,8 +56,8 @@ const PostJobsPage = () => {
     return (
         <div className='mt-4 max-w-6xl mx-auto'>
             <form onSubmit={handleSubmit} className="grid grid-cols-1 lg:grid-cols-2 gap-4 p-6 bg-white shadow-md rounded-lg mx-auto dark:bg-gray-900">
-      <input className="w-full border p-2 rounded" name="name" placeholder="Your Name" required />
-      <input className="w-full border p-2 rounded" name="email" placeholder="Email" type="email" required />
+      <input className="w-full border p-2 rounded" name="name" defaultValue={session?.user?.name} placeholder="Your Name" required readOnly />
+      <input className="w-full border p-2 rounded" name="email" defaultValue={session?.user?.email} placeholder="Email" type="email" required readOnly />
       <input className="w-full border p-2 rounded" name="company" placeholder="Company Name" required />
       <input className="w-full border p-2 rounded" name="jobTitle" placeholder="Job Title" required />
       <input className="w-full border p-2 rounded" name="location" placeholder="Location" required />

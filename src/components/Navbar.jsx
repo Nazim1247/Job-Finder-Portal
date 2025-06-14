@@ -11,6 +11,7 @@ const Navbar = () => {
     <Link href="/">Home</Link>
     <Link href="/findJobs">Find Jobs</Link>
     <Link href="/postJobs">Post a Jobs</Link>
+    <Link href="/my-posted-jobs">My Posted Jobs</Link>
     <Link href="/myApplication">My Application</Link>
     <Link href="/savedJobs">Saved jobs</Link>
     
