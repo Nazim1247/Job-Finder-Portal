@@ -10,6 +10,7 @@ const Navbar = () => {
     const links = <div className='space-x-4'>
     <Link href="/">Home</Link>
     <Link href="/find-jobs">Find Jobs</Link>
+    <Link href="/postJobs">Post a Jobs</Link>
     <Link href="/my-application">My Application</Link>
     <Link href="/saved-jobs">Saved jobs</Link>
     
