@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import React from 'react';
 import registerUser from '../actions/auth/registerUser';
+import SocialLogin from '../social/SocialLogin';
 
 const RegisterPage = () => {
     const handleSubmit = async(e)=>{
@@ -34,6 +35,8 @@ const RegisterPage = () => {
           <button className="btn btn-neutral mt-4">Register</button>
         </form>
         <Link href="/login">Have you already Register? Please<span className='text-red-500'>Login</span></Link>
+        <div className='divider'>OR</div>
+        <SocialLogin />
       </div>
     </div>
   </div>

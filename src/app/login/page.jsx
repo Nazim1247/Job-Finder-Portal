@@ -4,6 +4,7 @@ import React from 'react';
 import { signIn } from "next-auth/react"
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
+import SocialLogin from '../social/SocialLogin';
 
 const LoginPage = () => {
     const router = useRouter();
@@ -49,6 +50,8 @@ const LoginPage = () => {
           <button className="btn btn-neutral mt-4">Login</button>
         </form>
         <Link href="/register">Are you new? Please<span className='text-red-500'>Register</span></Link>
+        <div className='divider'>OR</div>
+        <SocialLogin />
       </div>
     </div>
   </div>
