@@ -9,7 +9,7 @@ const FindJobsPage = () => {
     const res = await fetch("/api/jobs");
     const data = await res.json();
     setJobs(data);
-    console.log(data);
+    // console.log(data);
   } catch (error) {
     console.error("Fetch jobs error:", error);
   }

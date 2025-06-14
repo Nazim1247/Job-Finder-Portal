@@ -2,9 +2,11 @@
 "use client";
 
 import { Briefcase, MapPin, DollarSign } from "lucide-react";
+import Link from "next/link";
 
 const JobCard = ({ job }) => {
   return (
+    
     <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow p-6 hover:shadow-lg transition-all duration-300">
       <div className="mb-4">
         <h2 className="text-xl font-bold text-gray-800 dark:text-white">
@@ -43,7 +45,11 @@ const JobCard = ({ job }) => {
           Apply Now
         </a>
       </div>
+      <Link href={`/api/jobs/${job._id}`}>
+  <button className="text-blue-600 underline mt-4">View Details</button>
+</Link>
     </div>
+    
   );
 };
 
