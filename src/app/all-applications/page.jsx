@@ -28,6 +28,7 @@ const AllApplicationsPage = () => {
           <p><strong>Applicant Name:</strong> {app.applicantName}</p>
           <p><strong>Email:</strong> {app.email}</p>
           <p><strong>Job ID:</strong> {app.jobId}</p>
+          <p><strong>Company:</strong> {app.jobCompany}</p>
           <p><strong>Job Title:</strong> {app.jobTitle}</p>
           <p><strong>Applied At:</strong> {new Date(app.appliedAt).toLocaleString()}</p>
         </li>

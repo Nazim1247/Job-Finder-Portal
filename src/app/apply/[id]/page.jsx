@@ -29,7 +29,7 @@ const ApplyPage = () => {
     const res = await fetch("/api/applications", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...formData, jobId: id }),
+      body: JSON.stringify({ ...formData, jobId: id, jobTitle: job.jobTitle, jobCompany: job.company }),
     });
 
     const result = await res.json();

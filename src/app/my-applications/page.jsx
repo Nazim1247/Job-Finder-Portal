@@ -54,7 +54,7 @@ const MyApplicationsPage = () => {
             <strong>Job Title:</strong> {app.jobTitle || "N/A"}
           </p>
           <p className="text-gray-700 mb-2 dark:text-gray-400">
-            <strong>Company:</strong> {app.companyName || "N/A"}
+            <strong>Company:</strong> {app.jobCompany || "N/A"}
           </p>
           <p className="text-gray-700 mb-2 dark:text-gray-400">
             <strong>Status:</strong>{" "}
