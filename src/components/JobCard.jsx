@@ -36,14 +36,14 @@ const JobCard = ({ job }) => {
         <p className="text-sm text-gray-500 dark:text-gray-400">
           Deadline: {job.deadline}
         </p>
-        <a
-          href={job.applyLink}
+        <Link
+          href={`/apply/${job._id}`}
           target="_blank"
           rel="noopener noreferrer"
           className="bg-blue-600 text-white text-sm px-4 py-2 rounded-xl hover:bg-blue-700 transition"
         >
           Apply Now
-        </a>
+        </Link>
       </div>
       <Link href={`/jobs/${job._id}`}>
   <button className="text-blue-600 underline mt-4">View Details</button>

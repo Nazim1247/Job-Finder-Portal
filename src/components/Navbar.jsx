@@ -12,7 +12,7 @@ const Navbar = () => {
     <Link href="/findJobs">Find Jobs</Link>
     <Link href="/postJobs">Post a Jobs</Link>
     <Link href="/my-posted-jobs">My Posted Jobs</Link>
-    <Link href="/myApplication">My Application</Link>
+    <Link href="/my-application">My Application</Link>
     <Link href="/savedJobs">Saved jobs</Link>
     
     </div>

@@ -6,7 +6,7 @@ import dbConnect, { collectionNameObj } from "@/lib/dbConnect";
 
 export async function DELETE(req, { params }) {
   try {
-    const jobCollection = await dbConnect(collectionNameObj.jobCollection);
+    const jobCollection = dbConnect(collectionNameObj.jobCollection);
     const id = params.id;
 
     if (!ObjectId.isValid(id)) {
@@ -39,4 +39,12 @@ export async function DELETE(req, { params }) {
     console.error("Delete Error:", error);
     return NextResponse.json({ message: "Internal Server Error" }, { status: 500 });
   }
+}
+
+export async function GET(req,{params}){
+    const p = await params;
+    const jobCollection = dbConnect(collectionNameObj.jobCollection)
+    const query = {_id: new ObjectId(p.id)}
+    const singleJob = await jobCollection.findOne(query)
+    return NextResponse.json(singleJob)
 }
