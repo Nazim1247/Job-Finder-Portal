@@ -103,7 +103,7 @@ export default function ResumeBuilder() {
     <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 p-6">
       {/* Form Side */}
       <div className="space-y-4">
-        <h2 className="text-2xl font-bold">Fill Resume Details</h2>
+        <h2 className="text-3xl text-blue-600 font-bold text-center">Fill Resume Details</h2>
         {[
           "name",
           "email",
@@ -139,7 +139,7 @@ export default function ResumeBuilder() {
                   Preparing PDF...
                 </button>
               ) : (
-                <button className="bg-blue-600 text-white px-4 py-2 rounded">
+                <button className="bg-blue-600 text-white px-4 py-2 rounded w-full">
                   Download PDF
                 </button>
               )
@@ -153,8 +153,9 @@ export default function ResumeBuilder() {
         <h2 className="text-2xl font-bold">{formData.name || "Your Name"}</h2>
         <p>{formData.email}</p>
         <p>{formData.phone}</p>
-        <hr className="my-2" />
-        <p>
+        <hr className="my-4" />
+        <div className="space-y-8">
+          <p>
           <strong>Overview:</strong> {formData.overview}
         </p>
         <p>
@@ -172,6 +173,7 @@ export default function ResumeBuilder() {
         <p>
           <strong>Projects:</strong> {formData.projects}
         </p>
+        </div>
       </div>
     </div>
   );
