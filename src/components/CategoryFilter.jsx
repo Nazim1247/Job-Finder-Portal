@@ -18,7 +18,7 @@ export default function CategoryFilter() {
   };
 
   return (
-    <div className="w-full overflow-x-auto py-4 max-w-3xl mx-auto">
+    <div className="w-full overflow-x-auto py-4 max-w-3xl mx-auto mt-6">
       <div className="grid grid-cols-2 md:grid-cols-5 gap-3 w-max mx-auto">
         {categories.map((cat) => (
           <button

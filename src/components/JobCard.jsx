@@ -73,14 +73,14 @@ const JobCard = ({ job }) => {
         </p>
         
       </div>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center mt-4">
         <Link href={`/jobs/${job._id}`}>
-  <button className="text-blue-600 underline mt-4">View Details</button>
+  <button className="bg-blue-600 text-white text-sm px-4 py-2 rounded-xl hover:bg-blue-700 transition">View Details</button>
 </Link>
 
 <button
     onClick={() => handleSaveJob(job)}
-    className="mt-4 inline-block px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md"
+    className="inline-block px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md"
   title="Bookmark">
     <FaBookmark />
   </button>
@@ -88,7 +88,7 @@ const JobCard = ({ job }) => {
           href={`/apply/${job._id}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-blue-600 text-white text-sm px-4 py-2 rounded-xl hover:bg-blue-700 transition mt-4"
+          className="bg-blue-600 text-white text-sm px-4 py-2 rounded-xl hover:bg-blue-700 transition"
         >Apply Now
         </Link>
       </div>
