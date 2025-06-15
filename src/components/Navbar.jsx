@@ -13,6 +13,7 @@ const Navbar = () => {
     <Link href="/postJobs">Post a Jobs</Link>
     <Link href="/my-posted-jobs">My Posted Jobs</Link>
     <Link href="/my-applications">My Applications</Link>
+    <Link href="/all-applications">All Applications</Link>
     <Link href="/savedJobs">Saved jobs</Link>
     
     </div>

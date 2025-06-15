@@ -1,20 +1,19 @@
-
-import { getServerSession } from "next-auth";
-import { authOptions } from "../../auth/[...nextauth]/route";
+import dbConnect, { collectionNameObj } from "@/lib/dbConnect";
 import { NextResponse } from "next/server";
-import dbConnect from "@/lib/dbConnect";
 
-export async function GET(req) {
-  const session = await getServerSession(authOptions);
-  const email = session?.user?.email;
+// GET: Get All Applications
+export async function GET() {
+  try {
+    const applicationCollection = dbConnect(collectionNameObj.applicationCollection);
+    const applications = await applicationCollection.find().sort({appliedAt: -1}).toArray();
+    return NextResponse.json(applications, {status: 200});
 
-  if (!email) {
-    return NextResponse.json({ success: false, message: "Unauthorized" }, { status: 401 });
+    // const jobCollection = dbConnect(collectionNameObj.jobCollection);
+    // const jobs = await jobCollection.find().sort({ postedAt: -1 }).toArray();
+
+    // return NextResponse.json(jobs, { status: 200 });
+  } catch (error) {
+    console.error("GET applications error:", error);
+    return NextResponse.json({ message: "Failed to fetch applications." }, { status: 500 });
   }
-
-  const applicationCollection = dbConnect(collectionNameObj.applicationCollection);
-  const jobs = await applicationCollection.find({ email }).toArray();
-console.log('jobs',jobs)
-  return NextResponse.json(jobs);
 }
-
