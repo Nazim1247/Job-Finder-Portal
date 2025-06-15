@@ -1,9 +1,11 @@
 "use client";
 import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import toast from 'react-hot-toast';
 
 const PostJobsPage = () => {
+  const router = useRouter();
   const {data:session} = useSession();
   // console.log(session)
     const handleSubmit = async (e)=>{
@@ -44,6 +46,7 @@ const PostJobsPage = () => {
     if (data?.insertedId) {
       toast.success("Job posted successfully!");
       form.reset();
+      router.push("/my-posted-jobs")
     } else {
       toast.error("Failed to post job.");
     }

@@ -45,7 +45,7 @@ const JobCard = ({ job }) => {
           Apply Now
         </a>
       </div>
-      <Link href={`/api/jobs/${job._id}`}>
+      <Link href={`/jobs/${job._id}`}>
   <button className="text-blue-600 underline mt-4">View Details</button>
 </Link>
     </div>

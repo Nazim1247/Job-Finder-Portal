@@ -3,6 +3,7 @@ import dbConnect, { collectionNameObj } from "@/lib/dbConnect";
 import { ObjectId } from "mongodb";
 import { NextResponse } from "next/server";
 
+
 export async function GET(req,{params}){
     const p = await params;
     const jobCollection = dbConnect(collectionNameObj.jobCollection)
@@ -33,3 +34,5 @@ export async function PATCH(req, { params }) {
     return Response.json({ message: "Internal Server Error" }, { status: 500 });
   }
 }
+
+

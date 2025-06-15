@@ -7,6 +7,7 @@ import { Briefcase } from "lucide-react";
 import { MapPin } from "lucide-react";
 import { DollarSign } from "lucide-react";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 const MyPostedJobsPage = () => {
   const { data: session, status } = useSession();
@@ -29,6 +30,31 @@ const MyPostedJobsPage = () => {
 
   if (status === "loading") return <p className="text-center mt-10">Loading...</p>;
   if (!session) return <p className="text-center mt-10">Please login to view your posted jobs.</p>;
+
+  const handleDelete = async (jobId) => {
+  const confirm = window.confirm("Are you sure you want to delete this job?");
+  if (!confirm) return;
+
+  try {
+    const res = await fetch(`/api/jobs/${jobId}`, {
+      method: "DELETE",
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      toast.success("Job deleted successfully");
+      // Remove the deleted job from state
+      setJobs(jobs.filter((job) => job._id !== jobId));
+    } else {
+      toast.error(data.message || "Failed to delete job");
+    }
+  } catch (error) {
+    console.error("Delete error:", error);
+    toast.error("Something went wrong");
+  }
+};
+
 
   return (
     <div className="max-w-6xl mx-auto p-4">
@@ -66,14 +92,7 @@ const MyPostedJobsPage = () => {
         <p className="text-sm text-gray-500 dark:text-gray-400">
           Deadline: {job.deadline}
         </p>
-        {/* <a
-          href={job.applyLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-blue-600 text-white text-sm px-4 py-2 rounded-xl hover:bg-blue-700 transition"
-        >
-          Apply Now
-        </a> */}
+        
       </div>
       <div className="space-x-6">
         <Link href={`/api/jobs/${job._id}`}>
@@ -82,9 +101,9 @@ const MyPostedJobsPage = () => {
 <Link href={`/my-posted/edit/${job._id}`}>
   <button className="bg-yellow-500 text-white px-4 py-1 rounded">Update</button>
 </Link>
-<Link href={`/my-posted/edit/${job._id}`}>
-  <button className="bg-red-500 text-white px-4 py-1 rounded">Delate</button>
-</Link>
+
+  <button onClick={()=> handleDelete(job._id)} className="bg-red-500 text-white px-4 py-1 rounded">Delate</button>
+
       </div>
     </div>
           ))}
