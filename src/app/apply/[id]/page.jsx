@@ -34,14 +34,14 @@ const ApplyPage = () => {
 
     const result = await res.json();
     if (res.ok) {
-        router.push("/my-application")
+        router.push("/my-applications")
       toast.success("Application submitted successfully!");
     } else {
       toast.error(result.message || "Failed to apply.");
     }
   };
 
-  if (!job) return <p>Loading...</p>;
+  if (!job) return <p className="text-center mt-6">Loading...</p>;
 
   return (
     <div className="max-w-xl mx-auto p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow hover:shadow-lg transition-all duration-300 mt-4">

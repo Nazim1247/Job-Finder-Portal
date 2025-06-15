@@ -12,7 +12,7 @@ const Navbar = () => {
     <Link href="/findJobs">Find Jobs</Link>
     <Link href="/postJobs">Post a Jobs</Link>
     <Link href="/my-posted-jobs">My Posted Jobs</Link>
-    <Link href="/my-application">My Application</Link>
+    <Link href="/my-applications">My Applications</Link>
     <Link href="/savedJobs">Saved jobs</Link>
     
     </div>
@@ -43,7 +43,9 @@ const Navbar = () => {
     {status == 'authenticated'? (
       <>
       <li onClick={()=> signOut()} className="btn">Log out</li>
-      <Image src={session?.user?.image} width={40} height={40} alt='user-logo' className='rounded-full'/>
+      {session?.user?.image ? 
+      <Image src={session?.user?.image} width="40" height="40" alt='Logo' className='rounded-full' /> : <div className="w-10 h-10 rounded-full bg-gray-300" />}
+      
       </>
     ):(
       <Link className="btn" href="/login">Login</Link>

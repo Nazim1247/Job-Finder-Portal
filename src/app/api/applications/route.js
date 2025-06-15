@@ -17,3 +17,18 @@ export async function POST(req) {
     return NextResponse.json({ message: "Failed to submit application" }, { status: 500 });
   }
 }
+
+export async function GET(req) {
+  const { searchParams } = new URL(req.url);
+  const email = searchParams.get("email");
+
+  if (!email) {
+    return new Response(JSON.stringify({ error: "Email is required" }), { status: 400 });
+  }
+
+  const applicationCollection = dbConnect(collectionNameObj.applicationCollection);
+  const applications = await applicationCollection.find({ email }).toArray();
+
+  return new Response(JSON.stringify(applications), { status: 200 });
+}
+
