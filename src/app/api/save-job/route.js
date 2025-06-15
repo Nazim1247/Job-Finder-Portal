@@ -38,3 +38,23 @@ export async function POST(request) {
     return NextResponse.json({ success: false, message: "Server Error" }, { status: 500 });
   }
 }
+
+export async function GET(request) {
+  try {
+    const { searchParams } = new URL(request.url);
+    const email = searchParams.get("email");
+
+    if (!email) {
+      return NextResponse.json({ success: false, message: "Email is required" }, { status: 400 });
+    }
+
+    const savedJobCollection = dbConnect(collectionNameObj.savedJobCollection);
+    const savedJobs = await savedJobCollection.find({ email }).toArray();
+
+    return NextResponse.json({ success: true, data: savedJobs }, { status: 200 });
+
+  } catch (error) {
+    console.error("Get Saved Jobs Error:", error);
+    return NextResponse.json({ success: false, message: "Server error" }, { status: 500 });
+  }
+}
