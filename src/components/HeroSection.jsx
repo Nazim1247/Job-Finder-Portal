@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 // import hero from "/public/hero.jpg"
 
 export default function HeroSection() {
@@ -23,12 +24,12 @@ export default function HeroSection() {
             Build your resume and apply to jobs in just a few clicks. Start your career journey with us!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <a
-              href="/jobs"
+            <Link
+              href="/findJobs"
               className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition"
             >
               🔍 Browse Jobs
-            </a>
+            </Link>
             <a
               href="/resume-builder"
               className="bg-white text-indigo-600 border border-indigo-600 px-6 py-3 rounded-lg hover:bg-indigo-100 transition"
