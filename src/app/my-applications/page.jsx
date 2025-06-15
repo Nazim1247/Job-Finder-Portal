@@ -32,7 +32,7 @@ const MyApplicationsPage = () => {
   if (!session) return <p className="text-center">Please log in to view your applications.</p>;
 
   return (
-    <div className="max-w-4xl mx-auto mt-6 bg-white rounded-lg shadow-lg dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition-all duration-300">
+    <div className="min-h-80 max-w-4xl mx-auto mt-6 bg-white rounded-lg shadow-lg dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition-all duration-300">
   <h1 className="text-3xl font-extrabold mb-8 text-center text-indigo-700">My Job Applications</h1>
 
   {applications.length > 0 ? (

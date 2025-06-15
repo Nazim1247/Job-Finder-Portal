@@ -23,7 +23,7 @@ export default function SavedJobsPage() {
   if (loading) return <p className="text-center mt-10">Loading...</p>;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 mt-6 dark:bg-gray-900">
+    <div className="min-h-80 max-w-6xl mx-auto px-4 mt-6 dark:bg-gray-900">
       <h1 className="text-3xl font-bold text-center text-indigo-600 mb-6">Saved Jobs</h1>
       {savedJobs.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
