@@ -2,6 +2,7 @@ import CategoryFilter from "@/components/CategoryFilter";
 import FeaturedJobs from "@/components/FeaturedJobs";
 import HeroSection from "@/components/HeroSection";
 import LatestJobs from "@/components/LatestJobs";
+import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <CategoryFilter />
       <LatestJobs />
       <FeaturedJobs />
+      <Testimonials />
     </div>
   );
 }

@@ -61,12 +61,12 @@ export default function LatestJobs() {
             <h3 className="text-xl font-semibold">{job.jobTitle}</h3>
             <p className="text-gray-200">{job.company}</p>
             <div className="text-sm text-gray-300 flex items-center space-x-2">
-            <MdLocationPin />
+            <MdLocationPin className="text-blue-600"/>
             <p>
             {job.location}</p>
             </div>
             <div className="mt-2 text-gray-400 line-clamp-3 flex items-center space-x-2">
-            <FaDollarSign />
+            <FaDollarSign className="text-yellow-600"/>
             <p>
             {job.salaryRange}</p>
             </div>
