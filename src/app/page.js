@@ -4,6 +4,7 @@ import FeaturedJobs from "@/components/FeaturedJobs";
 import HeroSection from "@/components/HeroSection";
 import LatestJobs from "@/components/LatestJobs";
 import NewsletterSignup from "@/components/Newsletter";
+import ResumePromo from "@/components/ResumePromo";
 import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <Testimonials />
       <ContactForm />
       <NewsletterSignup />
+      <ResumePromo />
     </div>
   );
 }

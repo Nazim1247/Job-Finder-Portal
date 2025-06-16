@@ -100,9 +100,10 @@ export default function ResumeBuilder() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 p-6">
+    <div className="max-w-6xl mx-auto dark:bg-gray-900">
       {/* Form Side */}
-      <div className="space-y-4">
+      <div className="dark:bg-gray-800 grid grid-cols-1 md:grid-cols-2 gap-8 p-6 border shadow rounded-2xl">
+        <div className="space-y-4">
         <h2 className="text-3xl text-blue-600 font-bold text-center">Fill Resume Details</h2>
         {[
           "name",
@@ -174,6 +175,7 @@ export default function ResumeBuilder() {
           <strong>Projects:</strong> {formData.projects}
         </p>
         </div>
+      </div>
       </div>
     </div>
   );

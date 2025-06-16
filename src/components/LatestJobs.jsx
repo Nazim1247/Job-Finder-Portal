@@ -73,18 +73,18 @@ export default function LatestJobs() {
 
             <div className="mt-4 flex gap-3">
               <Link href={`/jobs/${job._id}`}>
-                <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                <button className="bg-blue-600 text-white px-2 md:px-4 py-2 rounded hover:bg-blue-700">
                   View Details
                 </button>
               </Link>
               <Link href={`/apply/${job._id}`}>
-                <button className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+                <button className="bg-green-600 text-white px-2 md:px-4 py-2 rounded hover:bg-green-700">
                   Apply Now
                 </button>
               </Link>
               <button
                   onClick={() => handleSaveJob(job)}
-                  className="inline-block px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md"
+                  className="inline-block px-2 md:px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md"
                 title="Bookmark">
                   <FaBookmark />
                 </button>
