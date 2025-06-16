@@ -2,6 +2,7 @@ import CategoryFilter from "@/components/CategoryFilter";
 import FeaturedJobs from "@/components/FeaturedJobs";
 import HeroSection from "@/components/HeroSection";
 import LatestJobs from "@/components/LatestJobs";
+import NewsletterSignup from "@/components/Newsletter";
 import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <LatestJobs />
       <FeaturedJobs />
       <Testimonials />
+      <NewsletterSignup />
     </div>
   );
 }

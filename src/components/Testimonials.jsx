@@ -56,7 +56,7 @@ const Testimonials = () => {
 ];
 
   return (
-    <section className="bg-gray-100 dark:bg-gray-900 py-10">
+    <section className="py-10">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center text-indigo-600 mb-8">
           Success Stories
