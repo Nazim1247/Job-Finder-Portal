@@ -1,9 +1,9 @@
 
 "use client";
 
+import Link from "next/link";
 import { Briefcase, MapPin, DollarSign } from "lucide-react";
 import { useSession } from "next-auth/react";
-import Link from "next/link";
 import toast from "react-hot-toast";
 import { FaBookmark } from "react-icons/fa";
 
