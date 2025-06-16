@@ -57,7 +57,7 @@ const Testimonials = () => {
 
   return (
     <section className="py-10">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-indigo-600 mb-8">
           Success Stories
         </h2>

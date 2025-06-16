@@ -22,7 +22,7 @@ export default function NewsletterSignup() {
   };
 
   return (
-    <section className="max-w-6xl mx-auto rounded-2xl bg-indigo-50 dark:bg-cyan-900 py-10 px-4 mt-10">
+    <section className="max-w-6xl mx-auto rounded-2xl bg-indigo-50 dark:bg-cyan-900 py-12 px-4 mt-10">
       <div className="max-w-xl mx-auto text-center">
         <h2 className="text-2xl font-bold mb-4">📩 Subscribe to our Newsletter</h2>
         <p className="text-gray-400 mb-4">Get job updates and career tips directly to your inbox.</p>

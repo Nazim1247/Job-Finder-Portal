@@ -102,7 +102,7 @@ export default function FeaturedJobs() {
   // }
 
   return (
-    <section className="max-w-6xl mx-auto px-4 py-6">
+    <section className="max-w-6xl mx-auto py-6">
       <h2 className="text-3xl font-bold mb-6 text-indigo-600 text-center">
         Featured Jobs
       </h2>

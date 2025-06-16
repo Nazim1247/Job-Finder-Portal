@@ -22,7 +22,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="py-4 my-4 rounded-2xl dark:bg-gray-900 px-4 max-w-6xl mx-auto">
+    <section className="py-4 my-4 rounded-2xl dark:bg-blue-950 px-4 max-w-6xl mx-auto">
       <div className="max-w-xl mx-auto">
         <h2 className="text-2xl font-bold mb-4 text-center">📞 Contact Us</h2>
         <form onSubmit={handleSubmit} className="space-y-4">

@@ -52,10 +52,10 @@ export default function LatestJobs() {
 };
 
   return (
-    <div className="py-4 px-4 max-w-6xl mx-auto">
+    <div className="py-4 max-w-6xl mx-auto">
       <h2 className="text-3xl font-bold text-center mb-8 text-indigo-600">Latest Jobs</h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {jobs.map((job) => (
+        {jobs && jobs.map((job) => (
             // <JobCard key={job._id} job={job}/>
           <div key={job._id} className="border rounded-xl p-4 shadow hover:shadow-lg">
             <h3 className="text-xl font-semibold">{job.jobTitle}</h3>

@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="bg-indigo-50 dark:bg-gray-900 py-8 px-4">
+    <section className="bg-indigo-50 dark:bg-gray-900 py-8 px-4 max-w-6xl mx-auto mt-6 rounded-2xl">
       <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between">
         
         {/* Left Text with Framer Motion */}
@@ -32,7 +32,7 @@ export default function HeroSection() {
             </Link>
             <a
               href="/resume-builder"
-              className="bg-white text-indigo-600 border border-indigo-600 px-6 py-3 rounded-lg hover:bg-indigo-100 transition"
+              className="bg-gray-300 text-indigo-600 border border-indigo-600 px-6 py-3 rounded-lg hover:bg-gray-400 transition"
             >
               📝 Build Resume
             </a>
