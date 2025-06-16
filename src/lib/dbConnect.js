@@ -7,6 +7,7 @@ export const collectionNameObj = {
     applicationCollection: "applications",
     savedJobCollection: "savedJobs",
     newsletterCollection: "newsletters",
+    contactCollection: "contacts",
 }
 
 export default function dbConnect(collectionName){

@@ -1,4 +1,5 @@
 import CategoryFilter from "@/components/CategoryFilter";
+import ContactForm from "@/components/ContactForm";
 import FeaturedJobs from "@/components/FeaturedJobs";
 import HeroSection from "@/components/HeroSection";
 import LatestJobs from "@/components/LatestJobs";
@@ -13,6 +14,7 @@ export default function Home() {
       <LatestJobs />
       <FeaturedJobs />
       <Testimonials />
+      <ContactForm />
       <NewsletterSignup />
     </div>
   );
