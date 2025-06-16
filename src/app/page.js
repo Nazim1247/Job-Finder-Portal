@@ -1,3 +1,4 @@
+import AboutUs from "@/components/AboutUs";
 import CategoryFilter from "@/components/CategoryFilter";
 import ContactForm from "@/components/ContactForm";
 import FeaturedJobs from "@/components/FeaturedJobs";
@@ -15,6 +16,7 @@ export default function Home() {
       <LatestJobs />
       <FeaturedJobs />
       <Testimonials />
+      <AboutUs />
       <ContactForm />
       <NewsletterSignup />
       <ResumePromo />
