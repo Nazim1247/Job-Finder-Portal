@@ -2,7 +2,7 @@
 import Link from "next/link";
 // import { Bookmark } from "lucide-react";
 // import { useState } from "react";
-import { FaLocationDot } from "react-icons/fa6";
+import { FaArrowRightToBracket, FaLocationDot } from "react-icons/fa6";
 import { MdDescription } from "react-icons/md";
 import { useSession } from "next-auth/react";
 import toast from "react-hot-toast";
@@ -97,12 +97,8 @@ export default function FeaturedJobs() {
     }
   };
 
-  // const handleApply = (jobId)=>{
-  //   router.push(`/apply/${jobId}`)
-  // }
-
   return (
-    <section className="max-w-6xl mx-auto py-6">
+    <section className="max-w-6xl mx-auto">
       <h2 className="text-3xl font-bold mb-6 text-indigo-600 text-center">
         Featured Jobs
       </h2>
@@ -111,7 +107,7 @@ export default function FeaturedJobs() {
         {featuredJobs.map((job) => (
           <div
             key={job.id}
-            className="border border-gray-200 rounded-xl p-5 shadow hover:shadow-lg transition duration-300 relative flex flex-col justify-between"
+            className="dark:bg-gray-900 rounded-xl p-5 shadow hover:shadow-lg transition duration-300 relative flex flex-col justify-between"
           >
             <div>
               <h3 className="text-xl font-semibold text-gray-200">
@@ -154,6 +150,10 @@ export default function FeaturedJobs() {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="w-1/6 mx-auto mt-4">
+        <Link href={"/findJobs"} className="bg-gray-300 text-indigo-600 border border-indigo-600 px-6 py-3 rounded-lg hover:bg-gray-400 transition flex items-center gap-4">View All Jobs <span><FaArrowRightToBracket className="mt-1"/></span></Link>
       </div>
     </section>
   );

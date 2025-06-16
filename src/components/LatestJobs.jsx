@@ -6,6 +6,7 @@ import { FaBookmark, FaDollarSign } from "react-icons/fa";
 import { useSession } from "next-auth/react";
 import toast from "react-hot-toast";
 import { MdLocationPin } from "react-icons/md";
+import { FaArrowRightToBracket } from "react-icons/fa6";
 
 
 export default function LatestJobs() {
@@ -57,7 +58,7 @@ export default function LatestJobs() {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {jobs && jobs.map((job) => (
             // <JobCard key={job._id} job={job}/>
-          <div key={job._id} className="border rounded-xl p-4 shadow hover:shadow-lg">
+          <div key={job._id} className="dark:bg-gray-800 rounded-xl p-4 shadow hover:shadow-lg">
             <h3 className="text-xl font-semibold">{job.jobTitle}</h3>
             <p className="text-gray-200">{job.company}</p>
             <div className="text-sm text-gray-300 flex items-center space-x-2">
@@ -91,6 +92,9 @@ export default function LatestJobs() {
             </div>
           </div>
         ))}
+      </div>
+      <div className="w-1/6 mx-auto mt-5">
+        <Link href={"/findJobs"} className="bg-gray-300 text-indigo-600 border border-indigo-600 px-6 py-3 rounded-lg hover:bg-gray-400 transition flex items-center gap-4">View All Jobs <span><FaArrowRightToBracket className="mt-1"/></span></Link>
       </div>
     </div>
   );
