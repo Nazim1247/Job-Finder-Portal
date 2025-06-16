@@ -94,15 +94,15 @@ const MyPostedJobsPage = () => {
         </p>
         
       </div>
-      <div className="space-x-6">
+      <div className="space-x-2 mt-4">
         <Link href={`/api/jobs/${job._id}`}>
-  <button className="text-blue-600 underline mt-4">View Details</button>
+  <button className="bg-blue-600 text-white text-sm px-2 md:px-4 py-1.5 rounded hover:bg-blue-700 transition">View Details</button>
 </Link>
 <Link href={`/my-posted/edit/${job._id}`}>
-  <button className="bg-yellow-500 text-white px-4 py-1 rounded">Update</button>
+  <button className="bg-yellow-500 text-white px-2 md:px-4 py-1 rounded">Update</button>
 </Link>
 
-  <button onClick={()=> handleDelete(job._id)} className="bg-red-500 text-white px-4 py-1 rounded">Delate</button>
+  <button onClick={()=> handleDelete(job._id)} className="bg-red-500 text-white px-2 md:px-4 py-1 rounded">Delate</button>
 
       </div>
     </div>

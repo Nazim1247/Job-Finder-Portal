@@ -1,8 +1,15 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 export default function AboutUs() {
   return (
-    <section className="bg-gray-100 dark:bg-gray-900 py-10 max-w-6xl mx-auto rounded-2xl">
+    <motion.section
+    initial={{ scale: 0.8, opacity: 0 }}
+  whileInView={{ scale: 1, opacity: 1 }}
+  transition={{ duration: 0.7, ease: "easeOut" }}
+    >
+      <section className="bg-gray-100 dark:bg-gray-900 py-10 max-w-6xl mx-auto rounded-2xl">
       <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-indigo-600 mb-6">
           About Us
@@ -20,5 +27,6 @@ export default function AboutUs() {
         </p>
       </div>
     </section>
+    </motion.section>
   );
 }

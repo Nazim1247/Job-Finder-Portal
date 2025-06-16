@@ -24,7 +24,7 @@ export default function CategoryFilter() {
           <button
             key={cat.slug}
             onClick={() => handleClick(cat.slug)}
-            className="flex-shrink-0 px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition whitespace-nowrap"
+            className="flex-shrink-0 px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition whitespace-nowrap animate-bounce"
           >
             {cat.icon} {cat.name}
           </button>

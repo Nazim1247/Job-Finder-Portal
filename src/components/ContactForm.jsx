@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -22,7 +23,12 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="py-4 my-4 rounded-2xl dark:bg-blue-950 px-4 max-w-6xl mx-auto">
+    <motion.section
+    initial={{ rotate: -5, opacity: 0 }}
+  whileInView={{ rotate: 0, opacity: 1 }}
+  transition={{ duration: 0.8 }}
+    >
+      <section className="py-4 my-4 rounded-2xl dark:bg-blue-950 px-4 max-w-6xl mx-auto">
       <div className="max-w-xl mx-auto">
         <h2 className="text-2xl font-bold mb-4 text-center">📞 Contact Us</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -56,5 +62,6 @@ export default function ContactForm() {
         </form>
       </div>
     </section>
+    </motion.section>
   );
 }

@@ -7,6 +7,7 @@ import { useSession } from "next-auth/react";
 import toast from "react-hot-toast";
 import { MdLocationPin } from "react-icons/md";
 import { FaArrowRightToBracket } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 
 export default function LatestJobs() {
@@ -53,7 +54,12 @@ export default function LatestJobs() {
 };
 
   return (
-    <div className="py-4 max-w-6xl mx-auto">
+    <motion.section
+    initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.2 }}
+    >
+      <div className="py-4 max-w-6xl mx-auto">
       <h2 className="text-3xl font-bold text-center mb-8 text-indigo-600">Latest Jobs</h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {jobs && jobs.map((job) => (
@@ -93,9 +99,10 @@ export default function LatestJobs() {
           </div>
         ))}
       </div>
-      <div className="w-1/6 mx-auto mt-5">
-        <Link href={"/findJobs"} className="bg-gray-300 text-indigo-600 border border-indigo-600 px-6 py-3 rounded-lg hover:bg-gray-400 transition flex items-center gap-4">View All Jobs <span><FaArrowRightToBracket className="mt-1"/></span></Link>
+      <div className="w-2/3 md:w-1/6 mx-auto mt-5">
+        <Link href={"/findJobs"} className="bg-gray-300 text-indigo-600 border border-indigo-600 px-6 py-3 rounded-lg hover:bg-gray-400 transition flex items-center gap-4 animate-pulse">View All Jobs <span><FaArrowRightToBracket className="mt-1"/></span></Link>
       </div>
     </div>
+    </motion.section>
   );
 }

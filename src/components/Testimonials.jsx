@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { FaUserTie } from "react-icons/fa6";
 
 const Testimonials = () => {
@@ -56,7 +57,12 @@ const Testimonials = () => {
 ];
 
   return (
-    <section className="py-10">
+    <motion.section
+    initial={{ scale: 0.9, opacity: 0 }}
+  whileInView={{ scale: 1, opacity: 1 }}
+  transition={{ duration: 0.5 }}
+    >
+      <section className="py-10">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-indigo-600 mb-8">
           Success Stories
@@ -77,6 +83,7 @@ const Testimonials = () => {
         </div>
       </div>
     </section>
+    </motion.section>
   );
 };
 

@@ -7,6 +7,7 @@ import { MdDescription } from "react-icons/md";
 import { useSession } from "next-auth/react";
 import toast from "react-hot-toast";
 import { FaBookmark } from "react-icons/fa";
+import { motion } from "framer-motion";
 // import { useRouter } from "next/navigation";
 
 
@@ -98,7 +99,12 @@ export default function FeaturedJobs() {
   };
 
   return (
-    <section className="max-w-6xl mx-auto">
+   <motion.section
+   initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+   >
+     <section className="max-w-6xl mx-auto">
       <h2 className="text-3xl font-bold mb-6 text-indigo-600 text-center">
         Featured Jobs
       </h2>
@@ -152,9 +158,10 @@ export default function FeaturedJobs() {
         ))}
       </div>
 
-      <div className="w-1/6 mx-auto mt-4">
-        <Link href={"/findJobs"} className="bg-gray-300 text-indigo-600 border border-indigo-600 px-6 py-3 rounded-lg hover:bg-gray-400 transition flex items-center gap-4">View All Jobs <span><FaArrowRightToBracket className="mt-1"/></span></Link>
+      <div className="w-2/3 md:w-1/6 mx-auto mt-4">
+        <Link href={"/findJobs"} className="bg-gray-300 text-indigo-600 border border-indigo-600 px-6 py-3 rounded-lg hover:bg-gray-400 transition flex items-center gap-4 animate-pulse">View All Jobs <span><FaArrowRightToBracket className="mt-1"/></span></Link>
       </div>
     </section>
+   </motion.section>
   );
 }

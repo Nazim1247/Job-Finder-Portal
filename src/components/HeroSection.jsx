@@ -7,7 +7,12 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="bg-indigo-50 dark:bg-gray-900 py-8 px-4 max-w-6xl mx-auto mt-6 rounded-2xl">
+    <motion.section
+    initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+    >
+      <section className="bg-indigo-50 dark:bg-gray-900 py-8 px-4 max-w-6xl mx-auto mt-6 rounded-2xl">
       <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between">
         
         {/* Left Text with Framer Motion */}
@@ -26,13 +31,13 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Link
               href="/findJobs"
-              className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition"
+              className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition animate-pulse"
             >
               🔍 Browse Jobs
             </Link>
             <a
               href="/resume-builder"
-              className="bg-gray-300 text-indigo-600 border border-indigo-600 px-6 py-3 rounded-lg hover:bg-gray-400 transition"
+              className="bg-gray-300 text-indigo-600 border border-indigo-600 px-6 py-3 rounded-lg hover:bg-gray-400 transition animate-pulse"
             >
               📝 Build Resume
             </a>
@@ -41,7 +46,6 @@ export default function HeroSection() {
 
         {/* Right Image with Framer Motion */}
         <motion.div
-          className="md:w-1/2 mb-10 md:mb-0"
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
@@ -51,10 +55,11 @@ export default function HeroSection() {
             alt="Job search illustration"
             width={500}
             height={500}
-            className="mx-auto rounded-2xl"
+            className="mx-auto rounded-2xl animate-pulse"
           />
         </motion.div>
       </div>
     </section>
+    </motion.section>
   );
 }
