@@ -43,7 +43,7 @@ const Navbar = () => {
   <div className="navbar-end">
     {status == 'authenticated'? (
       <>
-      <li onClick={()=> signOut()} className="btn">Log out</li>
+      <li onClick={()=> signOut({callbackUrl: "/login"})} className="btn">Log out</li>
       {session?.user?.image ? 
       <Image src={session?.user?.image} width="40" height="40" alt='Logo' className='rounded-full' /> : <div className="w-10 h-10 rounded-full bg-gray-300" />}
       

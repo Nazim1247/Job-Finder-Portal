@@ -33,23 +33,25 @@ const LoginPage = () => {
     }
     return (
         <div>
-            <div className="hero bg-base-200 min-h-screen">
-  <div className="hero-content flex-col ">
+            <div className="hero bg-base-200 min-h-80">
+  <div className="hero-content flex-col w-full">
     <div className="text-center lg:text-left">
-      <h1 className="text-5xl font-bold">Login now!</h1>
+      <h1 className="text-2xl font-bold">Login now!</h1>
       
     </div>
-    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+    <div className="card bg-base-100 w-full max-w-2xl shrink-0 shadow-2xl">
       <div className="card-body">
         <form onSubmit={handleSubmit} className="fieldset">
           <label className="label">Email</label>
-          <input name='email' type="email" className="input" placeholder="Email" />
+          <input name='email' type="email" className="input w-full" placeholder="Email" />
           <label className="label">Password</label>
-          <input name='password' type="password" className="input" placeholder="Password" />
+          <input name='password' type="password" className="input w-full" placeholder="Password" />
           <div><a className="link link-hover">Forgot password?</a></div>
           <button className="btn btn-neutral mt-4">Login</button>
         </form>
-        <Link href="/register">Are you new? Please<span className='text-red-500'>Register</span></Link>
+        <div className='text-center'>
+          <Link href="/register">Are you new? Please<span className='text-red-500'>Register</span></Link>
+        </div>
         <div className='divider'>OR</div>
         <SocialLogin />
       </div>
