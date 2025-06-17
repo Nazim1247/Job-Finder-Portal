@@ -57,8 +57,9 @@ const PostJobsPage = () => {
 
     }
     return (
-        <div className='mt-4 max-w-6xl mx-auto'>
-            <form onSubmit={handleSubmit} className="grid grid-cols-1 lg:grid-cols-2 gap-4 p-6 bg-white shadow-md rounded-lg mx-auto dark:bg-gray-900">
+        <div className='bg-color py-3 mt-4 max-w-6xl mx-auto rounded-2xl'>
+          <h1 className='text-center text-3xl text-blue-600 font-bold'>Post Your Job</h1>
+            <form onSubmit={handleSubmit} className="grid grid-cols-1 lg:grid-cols-2 gap-4 p-6 shadow-md rounded-lg mx-auto">
       <input className="w-full border p-2 rounded" name="name" defaultValue={session?.user?.name} placeholder="Your Name" required readOnly />
       <input className="w-full border p-2 rounded" name="email" defaultValue={session?.user?.email} placeholder="Email" type="email" required readOnly />
       <input className="w-full border p-2 rounded" name="company" placeholder="Company Name" required />

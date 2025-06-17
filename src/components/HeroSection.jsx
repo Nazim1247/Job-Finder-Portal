@@ -12,7 +12,7 @@ export default function HeroSection() {
   whileInView={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <section className="bg-color bg-indigo-50 dark:bg-gray-900 py-8 px-4 max-w-6xl mx-auto mt-6 rounded-2xl">
+      <section className="bg-color bg-indigo-50 dark:bg-gray-900 py-8 px-4 max-w-6xl mx-auto mt-4 rounded-2xl">
       <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between">
         
         {/* Left Text with Framer Motion */}

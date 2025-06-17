@@ -57,23 +57,23 @@ const MyPostedJobsPage = () => {
 
 
   return (
-    <div className="max-w-6xl mx-auto p-4 min-h-80">
-      <h2 className="text-2xl font-bold mb-6 text-center">My Posted Jobs</h2>
+    <div className="max-w-6xl mx-auto p-4 min-h-80 shadow my-4 rounded-xl">
+      <h2 className="text-2xl font-bold mb-6 text-center text-blue-600">My Posted Jobs</h2>
       {jobs.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {jobs.map((job) => (
             // <JobCard key={job._id} job={job} />
-            <div key={job._id} className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow p-6 hover:shadow-lg transition-all duration-300">
+            <div key={job._id} className="bg-color rounded-xl shadow p-6 hover:shadow-lg transition-all duration-300">
       <div className="mb-4">
-        <h2 className="text-xl font-bold text-gray-800 dark:text-white">
+        <h2 className="text-xl font-bold">
           {job.jobTitle}
         </h2>
-        <p className="text-sm text-gray-500 dark:text-gray-300">
+        <p className="text-sm text-gray-500">
           {job.company}
         </p>
       </div>
 
-      <div className="flex flex-col gap-2 text-sm text-gray-600 dark:text-gray-400 mb-4">
+      <div className="flex flex-col gap-2 text-sm text-gray-400 mb-4">
         <div className="flex items-center gap-2">
           <Briefcase size={16} />
           <span>{job.jobType}</span>
@@ -89,7 +89,7 @@ const MyPostedJobsPage = () => {
       </div>
 
       <div className="flex justify-between items-center">
-        <p className="text-sm text-gray-500 dark:text-gray-400">
+        <p className="text-sm text-gray-500">
           Deadline: {job.deadline}
         </p>
         

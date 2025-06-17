@@ -19,12 +19,12 @@ const AllApplicationsPage = () => {
   }, []);
 
   return (
-    <div className="min-h-80 max-w-6xl mx-auto py-6 px-4 dark:bg-gray-900">
+    <div className="min-h-80 max-w-6xl mx-auto py-4 px-4 shadow rounded-xl my-4">
   <h1 className="text-3xl font-bold mb-6 text-center text-indigo-600">All Job Applications</h1>
   {applications.length > 0 ? (
     <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {applications.map((app) => (
-        <li key={app._id} className="border border-gray-300 p-5 rounded-lg shadow-md">
+        <li key={app._id} className="bg-color p-5 rounded-lg shadow hover:shadow-xl">
           <p><strong>Applicant Name:</strong> {app.applicantName}</p>
           <p><strong>Email:</strong> {app.email}</p>
           <p><strong>Job ID:</strong> {app.jobId}</p>

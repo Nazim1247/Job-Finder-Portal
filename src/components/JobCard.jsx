@@ -42,9 +42,9 @@ const JobCard = ({ job }) => {
 
   return (
     
-    <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow p-6 hover:shadow-lg transition-all duration-300">
+    <div className="bg-color rounded-2xl shadow p-6 hover:shadow-lg transition-all duration-300">
       <div className="mb-4">
-        <h2 className="text-xl font-bold text-gray-800 dark:text-white">
+        <h2 className="text-xl font-bold">
           {job.jobTitle}
         </h2>
         <p className="text-sm text-gray-500 dark:text-gray-300">

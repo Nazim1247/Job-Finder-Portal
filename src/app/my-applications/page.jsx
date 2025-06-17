@@ -32,31 +32,31 @@ const MyApplicationsPage = () => {
   if (!session) return <p className="text-center">Please log in to view your applications.</p>;
 
   return (
-    <div className="min-h-80 max-w-4xl mx-auto mt-6 bg-white rounded-lg shadow-lg dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition-all duration-300">
-  <h1 className="text-3xl font-extrabold mb-8 text-center text-indigo-700">My Job Applications</h1>
+    <div className="min-h-80 max-w-4xl mx-auto my-4 rounded-lg shadow-lg p-6 transition-all duration-300">
+  <h1 className="text-3xl font-extrabold mb-8 text-center text-indigo-600">My Job Applications</h1>
 
   {applications.length > 0 ? (
     <ul className="space-y-6">
       {applications.map((app) => (
         <li
           key={app._id}
-          className="border border-gray-300 rounded-lg p-6 hover:shadow-xl transition-shadow duration-300"
+          className="bg-color rounded-lg p-6 shadow hover:shadow-xl transition-shadow duration-300"
         >
           <div className="flex justify-between items-center mb-3">
-            <h2 className="text-xl font-semibold text-indigo-600 dark:text-gray-300">Job ID: {app.jobId}</h2>
-            <span className="text-sm text-gray-500 dark:text-gray-300">
+            <h2 className="text-xl font-semibold text-indigo-600">Job ID: {app.jobId}</h2>
+            <span className="text-sm text-gray-500">
               Applied on: {new Date(app.appliedAt).toLocaleDateString()} at{" "}
               {new Date(app.appliedAt).toLocaleTimeString()}
             </span>
           </div>
 
-          <p className="text-gray-700 mb-2 dark:text-gray-400">
+          <p className="text-gray-400 mb-2">
             <strong>Job Title:</strong> {app.jobTitle || "N/A"}
           </p>
-          <p className="text-gray-700 mb-2 dark:text-gray-400">
+          <p className="text-gray-400 mb-2">
             <strong>Company:</strong> {app.jobCompany || "N/A"}
           </p>
-          <p className="text-gray-700 mb-2 dark:text-gray-400">
+          <p className="text-gray-400 mb-2">
             <strong>Status:</strong>{" "}
             <span
               className={`font-semibold ${
@@ -70,7 +70,7 @@ const MyApplicationsPage = () => {
               {app.status || "Pending"}
             </span>
           </p>
-          <p className="text-gray-600 italic text-sm dark:text-gray-400">{app.notes || "No additional notes."}</p>
+          <p className="text-gray-500 italic text-sm">{app.notes || "No additional notes."}</p>
         </li>
       ))}
     </ul>
