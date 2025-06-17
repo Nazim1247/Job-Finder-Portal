@@ -71,13 +71,13 @@ const Testimonials = () => {
           {testimonials.map((t) => (
             <div
               key={t.id}
-              className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 shadow"
+              className="bg-color hover:shadow-lg rounded-xl p-4 shadow"
             >
               
               <FaUserTie className="w-12 h-12 rounded-full mb-2 mx-auto"/>
               <p className="text-indigo-600 font-semibold text-center text-2xl">{t.name}</p>
-              <p className="text-sm text-gray-400 text-center">{t.role}</p>
-              <p className="text-gray-500 dark:text-gray-200 mt-2 text-center">“{t.message}”</p>
+              <p className="text-sm text-gray-500 text-center">{t.role}</p>
+              <p className="text-gray-400 mt-2 text-center">“{t.message}”</p>
             </div>
           ))}
         </div>

@@ -12,7 +12,7 @@ export default function HeroSection() {
   whileInView={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <section className="bg-indigo-50 dark:bg-gray-900 py-8 px-4 max-w-6xl mx-auto mt-6 rounded-2xl">
+      <section className="bg-color bg-indigo-50 dark:bg-gray-900 py-8 px-4 max-w-6xl mx-auto mt-6 rounded-2xl">
       <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between">
         
         {/* Left Text with Framer Motion */}
@@ -22,10 +22,10 @@ export default function HeroSection() {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-indigo-700 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold text-indigo-600 leading-tight">
             Find Your <span className="text-indigo-500">Dream Job</span> Today
           </h1>
-          <p className="text-gray-400 text-lg">
+          <p className="text-lg">
             Build your resume and apply to jobs in just a few clicks. Start your career journey with us!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
@@ -37,7 +37,7 @@ export default function HeroSection() {
             </Link>
             <a
               href="/resume-builder"
-              className="bg-gray-300 text-indigo-600 border border-indigo-600 px-6 py-3 rounded-lg hover:bg-gray-400 transition animate-pulse"
+              className="bg-green-600 text-white hover:bg-green-700 px-6 py-3 rounded-lg transition animate-pulse"
             >
               📝 Build Resume
             </a>

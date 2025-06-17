@@ -113,13 +113,13 @@ export default function FeaturedJobs() {
         {featuredJobs.map((job) => (
           <div
             key={job.id}
-            className="dark:bg-gray-900 rounded-xl p-5 shadow hover:shadow-lg transition duration-300 relative flex flex-col justify-between"
+            className="bg-color rounded-xl p-5 shadow hover:shadow-lg transition duration-300 relative flex flex-col justify-between"
           >
             <div>
-              <h3 className="text-xl font-semibold text-gray-200">
+              <h3 className="text-xl font-semibold">
               {job.title}
             </h3>
-            <p className="text-gray-300">{job.company}</p>
+            <p className="text-gray-500">{job.company}</p>
             <div className="mt-2 text-gray-400 text-sm flex items-center gap-2">
             <FaLocationDot className="text-blue-600"/>
             <p>{job.location}</p>

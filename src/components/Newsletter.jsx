@@ -30,12 +30,12 @@ export default function NewsletterSignup() {
    >
      <section className="max-w-6xl mx-auto rounded-2xl bg-indigo-50 dark:bg-cyan-900 py-12 px-4 mt-10">
       <div className="max-w-xl mx-auto text-center">
-        <h2 className="text-2xl font-bold mb-4">📩 Subscribe to our Newsletter</h2>
-        <p className="text-gray-400 mb-4">Get job updates and career tips directly to your inbox.</p>
+        <h2 className="text-gray-200 text-2xl font-bold mb-4">📩 Subscribe to our Newsletter</h2>
+        <p className="text-gray-300 mb-4">Get job updates and career tips directly to your inbox.</p>
         <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4">
           <input
             type="email"
-            className="w-full border border-gray-300 rounded px-4 py-2"
+            className="text-gray-400 w-full border border-gray-300 rounded px-4 py-2"
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}

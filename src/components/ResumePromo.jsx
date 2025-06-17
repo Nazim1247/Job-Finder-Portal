@@ -17,7 +17,7 @@ export default function ResumePromo() {
         </p>
         <Link
           href="/resume-builder"
-          className="bg-gray-300 text-indigo-600 font-semibold px-6 py-3 rounded shadow hover:bg-gray-400 transition"
+          className="bg-gray-300 text-indigo-600 font-semibold px-6 py-3 rounded shadow hover:bg-gray-400 transition animate-pulse"
         >
           Create Resume Now
         </Link>
