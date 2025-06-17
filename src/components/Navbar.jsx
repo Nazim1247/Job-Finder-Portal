@@ -3,6 +3,7 @@ import { signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const {data: session, status} = useSession();
@@ -41,6 +42,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
+    <ThemeToggle />
     {status == 'authenticated'? (
       <>
       <li onClick={()=> signOut({callbackUrl: "/login"})} className="btn">Log out</li>
