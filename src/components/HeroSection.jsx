@@ -31,13 +31,13 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Link
               href="/findJobs"
-              className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition animate-pulse"
+              className="bg-indigo-600 text-white px-6 md:px-2 py-3 rounded-lg hover:bg-indigo-700 transition animate-pulse"
             >
               🔍 Browse Jobs
             </Link>
             <a
               href="/resume-builder"
-              className="bg-green-600 text-white hover:bg-green-700 px-6 py-3 rounded-lg transition animate-pulse"
+              className="bg-green-600 text-white hover:bg-green-700 px-6 md:px-2 py-3 rounded-lg transition animate-pulse"
             >
               📝 Build Resume
             </a>

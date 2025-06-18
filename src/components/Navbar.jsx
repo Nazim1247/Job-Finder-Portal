@@ -8,7 +8,8 @@ import ThemeToggle from './ThemeToggle';
 const Navbar = () => {
   const {data: session, status} = useSession();
   // console.log(session);
-    const links = <div className='space-x-4'>
+    const links = <div className='flex flex-col lg:flex-row gap-2 lg:gap-4'>
+    <Link className='flex md:hidden text-xl text-blue-600 font-bold' href="/">Job Finder Portal</Link>
     <Link href="/">Home</Link>
     <Link href="/findJobs">Find Jobs</Link>
     <Link href="/postJobs">Post a Jobs</Link>
@@ -24,7 +25,7 @@ const Navbar = () => {
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
       </div>
       <ul
         tabIndex={0}
@@ -33,7 +34,7 @@ const Navbar = () => {
         {links}
       </ul>
     </div>
-    <Link className="text-xl" href='/'>Job Finder Portal</Link>
+    <Link className="text-xl font-bold hidden md:flex" href='/'>Job Finder Portal</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -42,19 +43,45 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <ThemeToggle />
-    {status == 'authenticated'? (
-      <>
-      <li onClick={()=> signOut({callbackUrl: "/login"})} className="btn">Log out</li>
-      {session?.user?.image ? 
-      <Image src={session?.user?.image} width="40" height="40" alt='Logo' className='rounded-full' /> : <div className="w-10 h-10 rounded-full bg-gray-300" />}
-      
-      </>
-    ):(
-      <Link className="btn" href="/login">Login</Link>
-    )}
-    
+  {/* User Image as Dropdown Toggle */}
+  <div className="dropdown dropdown-end">
+    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+      {session?.user?.image ? (
+        <div className="w-10 rounded-full">
+          <Image
+            src={session?.user?.image}
+            width="40"
+            height="40"
+            alt="User"
+            className="rounded-full"
+          />
+        </div>
+      ) : (
+        <div className="w-10 h-10 bg-gray-300 rounded-full" />
+      )}
+    </div>
+
+    <ul
+      tabIndex={0}
+      className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+    >
+      <li><ThemeToggle /></li>
+
+      {status === "authenticated" ? (
+        <>
+          <li>
+            <button onClick={() => signOut({ callbackUrl: "/login" })}>Logout</button>
+          </li>
+          <li><a href="/admin">Admin Panel</a></li>
+          <li><a href="/profile">Profile</a></li>
+        </>
+      ) : (
+        <li><Link href="/login">Login</Link></li>
+      )}
+    </ul>
   </div>
+</div>
+
 </div>
         </div>
     );

@@ -28,9 +28,9 @@ export default function ContactForm() {
   whileInView={{ rotate: 0, opacity: 1 }}
   transition={{ duration: 0.8 }}
     >
-      <section className="bg-color py-4 my-4 rounded-2xl px-4 max-w-6xl mx-auto">
+      <section id="contact" className="bg-color py-4 my-4 rounded-2xl px-4 max-w-6xl mx-auto">
       <div className="max-w-xl mx-auto">
-        <h2 className="text-2xl font-bold mb-4 text-center">📞 Contact Us</h2>
+        <h2 className="text-3xl text-indigo-600 font-bold mb-4 text-center">📞 Contact Us</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="text"
