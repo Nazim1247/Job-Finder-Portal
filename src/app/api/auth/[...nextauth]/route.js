@@ -43,24 +43,42 @@ pages: {
     signIn: "/login"
 },
 callbacks: {
-    async signIn({ user, account, profile, email, credentials }) {
-        // console.log({ user, account, profile, email, credentials });
-        if(account){
-            const {providerAccountId, provider} = account;
-            const {email: user_email, image, name} = user;
+  // ✅ Sign In Callback
+  async signIn({ user, account }) {
+    if (account) {
+      const { providerAccountId, provider } = account;
+      const { email: user_email, image, name } = user;
 
-            const userCollection = dbConnect(collectionNameObj.userCollection);
+      const userCollection = dbConnect(collectionNameObj.userCollection);
+      const isExist = await userCollection.findOne({ providerAccountId });
 
-            const isExist = await userCollection.findOne({providerAccountId});
-
-            if(!isExist){
-                const payload = {providerAccountId,provider, name, email:user_email, image}
-                await userCollection.insertOne(payload)
-            }
-        }
-    return true
+      if (!isExist) {
+        const payload = {
+          providerAccountId,
+          provider,
+          name,
+          email: user_email,
+          image,
+          role: "user", // 👈 Default role
+        };
+        await userCollection.insertOne(payload);
+      }
+    }
+    return true;
   },
-}
+
+  // ✅ Session Callback - include role
+  async session({ session }) {
+    const userCollection = dbConnect(collectionNameObj.userCollection);
+    const user = await userCollection.findOne({ email: session.user.email });
+
+    if (user) {
+      session.user.role = user.role || "user"; // 👈 Include role
+    }
+
+    return session;
+  },
+},
 }
 
 

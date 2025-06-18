@@ -12,11 +12,13 @@ const Navbar = () => {
     <Link className='flex md:hidden text-xl text-blue-600 font-bold' href="/">Job Finder Portal</Link>
     <Link href="/">Home</Link>
     <Link href="/findJobs">Find Jobs</Link>
-    <Link href="/postJobs">Post a Jobs</Link>
-    <Link href="/my-posted-jobs">My Posted Jobs</Link>
-    <Link href="/my-applications">My Applications</Link>
-    <Link href="/all-applications">All Applications</Link>
+    {/* <Link href="/postJobs">Post a Jobs</Link> */}
+    {/* <Link href="/my-posted-jobs">My Posted Jobs</Link> */}
+    {/* <Link href="/all-applications">All Applications</Link> */}
     <Link href="/saved-jobs">Saved jobs</Link>
+    <Link href="/my-applications">My Applications</Link>
+    <Link href="/#about">About Us</Link>
+    <Link href="/#contact">Contact Us</Link>
     
     </div>
     return (
