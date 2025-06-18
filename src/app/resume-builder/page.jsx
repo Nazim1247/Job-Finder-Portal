@@ -100,9 +100,9 @@ export default function ResumeBuilder() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto dark:bg-gray-900">
+    <div className="bg-color shadow max-w-6xl mx-auto rounded-xl my-4">
       {/* Form Side */}
-      <div className="dark:bg-gray-800 grid grid-cols-1 md:grid-cols-2 gap-8 p-6 border shadow rounded-2xl">
+      <div className="bg-color grid grid-cols-1 md:grid-cols-2 gap-8 p-6 shadow rounded-xl">
         <div className="space-y-4">
         <h2 className="text-3xl text-blue-600 font-bold text-center">Fill Resume Details</h2>
         {[
@@ -111,10 +111,10 @@ export default function ResumeBuilder() {
           "phone",
           "overview",
           "skills",
-          "languages",
-          "education",
-          "experience",
           "projects",
+          "experience",
+          "education",
+          "languages",
         ].map((field) => (
           <textarea
             key={field}
@@ -163,16 +163,16 @@ export default function ResumeBuilder() {
           <strong>Skills:</strong> {formData.skills}
         </p>
         <p>
-          <strong>Languages:</strong> {formData.languages}
-        </p>
-        <p>
-          <strong>Education:</strong> {formData.education}
+          <strong>Projects:</strong> {formData.projects}
         </p>
         <p>
           <strong>Experience:</strong> {formData.experience}
         </p>
         <p>
-          <strong>Projects:</strong> {formData.projects}
+          <strong>Education:</strong> {formData.education}
+        </p>
+        <p>
+          <strong>Languages:</strong> {formData.languages}
         </p>
         </div>
       </div>
