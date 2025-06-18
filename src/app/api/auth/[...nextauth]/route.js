@@ -42,8 +42,9 @@ export const authOptions = {
 pages: {
     signIn: "/login"
 },
+
 callbacks: {
-  // ✅ Sign In Callback
+  // Sign In Callback
   async signIn({ user, account }) {
     if (account) {
       const { providerAccountId, provider } = account;
@@ -59,7 +60,7 @@ callbacks: {
           name,
           email: user_email,
           image,
-          role: "user", // 👈 Default role
+          role: "user",
         };
         await userCollection.insertOne(payload);
       }
@@ -67,18 +68,21 @@ callbacks: {
     return true;
   },
 
-  // ✅ Session Callback - include role
+  // Session Callback
   async session({ session }) {
     const userCollection = dbConnect(collectionNameObj.userCollection);
     const user = await userCollection.findOne({ email: session.user.email });
 
     if (user) {
-      session.user.role = user.role || "user"; // 👈 Include role
+      session.user.role = user.role || "user";
+      session.user._id = user._id.toString();
     }
 
     return session;
   },
-},
+}
+
+
 }
 
 

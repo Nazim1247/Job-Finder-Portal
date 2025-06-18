@@ -16,7 +16,7 @@ const RegisterPage = () => {
   const email = form.email.value;
   const password = form.password.value;
 
-  const result = await registerUser({ name, email, password });
+  const result = await registerUser({ name, email, password,role: "user" });
 
   if (result.success) {
     toast.success("Registration successful! Logging in...");

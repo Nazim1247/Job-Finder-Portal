@@ -26,7 +26,7 @@ export default function ProfilePage() {
       </div>
 
       <div className="mt-6 space-y-3">
-        <button className="btn btn-primary w-full">✏️ Edit Profile</button>
+        <Link href={'/edit-profile'} className="btn btn-primary w-full">✏️ Edit Profile</Link>
         <Link href={'/resume-builder'} className="btn btn-outline w-full">📄 Build Resume</Link>
       </div>
     </div>

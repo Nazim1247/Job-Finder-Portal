@@ -74,7 +74,8 @@ const Navbar = () => {
           <li>
             <button onClick={() => signOut({ callbackUrl: "/login" })}>Logout</button>
           </li>
-          <li><a href="/admin">Admin Panel</a></li>
+          {session?.user?.role === "admin" && <li><a href="/admin">Admin Panel</a></li>}
+          
           <li><a href="/profile">Profile</a></li>
         </>
       ) : (
