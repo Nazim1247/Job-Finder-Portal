@@ -58,8 +58,9 @@ const EditJobPage = () => {
   if (!job) return <p className="text-center mt-6">Loading...</p>;
 
   return (
-    <form onSubmit={handleSubmit} className="p-4 max-w-6xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 bg-white shadow-md rounded-lg mx-auto dark:bg-gray-900">
+    <form onSubmit={handleSubmit} className="bg-color p-4 max-w-6xl mx-auto rounded-xl my-6">
+      <h1 className="text-3xl text-blue-600 font-bold text-center mb-6">Update your job</h1>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 shadow-md rounded-lg mx-auto">
         <input
         name="name"
         defaultValue={job.name}

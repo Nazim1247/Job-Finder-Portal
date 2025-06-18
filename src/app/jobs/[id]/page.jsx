@@ -14,14 +14,12 @@ export default async function JobDetailsPage({ params }) {
   if (!job) return notFound();
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white dark:bg-gray-900 rounded-2xl shadow mt-8 dark:text-white">
-      
-
-      <div className="grid md:grid-cols-2 gap-4 mb-4 dark:text-white">
-        <h1 className="text-2xl font-bold mb-2 text-gray-800 dark:text-white">
+    <div className="bg-color max-w-4xl mx-auto p-6 rounded-2xl shadow my-6">
+      <div className="grid md:grid-cols-2 gap-4 mb-4">
+        <h1 className="text-2xl font-bold mb-2">
         {job.jobTitle}
       </h1>
-      <p className="text-gray-500 dark:text-gray-300 mb-4">{job.company}</p>
+      <p><strong>Company:</strong> {job.company}</p>
         <p><strong>Location:</strong> {job.location}</p>
         <p><strong>Job Type:</strong> {job.jobType}</p>
         <p><strong>Category:</strong> {job.category}</p>
@@ -32,12 +30,12 @@ export default async function JobDetailsPage({ params }) {
         <p><strong>Company Website:</strong> <a className="text-blue-600 underline" href={job.website} target="_blank">{job.website}</a></p>
       
 
-      <div className="mb-4 dark:text-white">
+      <div className="mb-4">
         <h2 className="text-lg font-semibold">Job Description</h2>
-        <p className="text-gray-700 dark:text-gray-300">{job.description}</p>
+        <p>{job.description}</p>
       </div>
 
-      <div className="mb-4 dark:text-white">
+      <div className="mb-4">
         <h2 className="text-lg font-semibold">Responsibilities</h2>
         <ul className="list-disc list-inside">
           {job.responsibilities?.split("\n").map((item, idx) => (
@@ -46,7 +44,7 @@ export default async function JobDetailsPage({ params }) {
         </ul>
       </div>
 
-      <div className="mb-4 dark:text-white">
+      <div className="mb-4">
         <h2 className="text-lg font-semibold">Requirements</h2>
         <ul className="list-disc list-inside">
           {job.requirements?.split("\n").map((item, idx) => (
@@ -56,7 +54,7 @@ export default async function JobDetailsPage({ params }) {
       </div>
 
       {job.perks && (
-        <div className="mb-4 dark:text-white">
+        <div className="mb-4">
           <h2 className="text-lg font-semibold">Perks</h2>
           <ul className="list-disc list-inside">
             {job.perks?.split("\n").map((perk, idx) => (
@@ -66,7 +64,7 @@ export default async function JobDetailsPage({ params }) {
         </div>
       )}
 </div>
-      <div className="text-right dark:text-white">
+      <div className="text-right">
         <a
           href={job.applyLink}
           target="_blank"
