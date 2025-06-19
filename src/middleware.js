@@ -2,7 +2,7 @@ import { getToken } from "next-auth/jwt";
 import { NextResponse } from "next/server";
 
 export const config = {
-  matcher: ["/admin/:path*", "/my-applications", "/profile", "/saved-jobs"],
+  matcher: ["/admin/:path*", "/my-applications", "/profile", "/saved-jobs", "/apply/:path*", "/jobs/:path*"],
 };
 
 export async function middleware(req) {

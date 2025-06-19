@@ -66,7 +66,7 @@ export default async function JobDetailsPage({ params }) {
 </div>
       <div className="text-right">
         <a
-          href={job.applyLink}
+          href={`/apply/${id}`}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"

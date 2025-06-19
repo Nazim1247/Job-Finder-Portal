@@ -47,7 +47,7 @@ const ApplyPage = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow hover:shadow-lg transition-all duration-300 mt-4">
+    <div className="bg-color max-w-xl mx-auto p-6 rounded-2xl shadow hover:shadow-lg transition-all duration-300 my-4">
       <h2 className="text-xl text-center font-bold mb-4">Apply for {jobTitle}</h2>
       <p className="text-center text-sm text-gray-500 mb-4">{company} — {location}</p>
       <form onSubmit={handleSubmit} className="space-y-4">
