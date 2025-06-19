@@ -8,7 +8,7 @@ const categories = [
   { name: "Logistics", icon: "📦", slug: "logistics" },
   { name: "Education", icon: "🧑‍🏫", slug: "education" },
   { name: "Healthcare", icon: "💊", slug: "healthcare" },
-  { name: "Technology", icon: "💻", slug: "technology" },
+  { name: "Science", icon: "💻", slug: "science" },
 ];
 
 export default function CategoryFilter() {
