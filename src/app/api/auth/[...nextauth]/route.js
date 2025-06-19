@@ -42,8 +42,32 @@ export const authOptions = {
 pages: {
     signIn: "/login"
 },
+session: {
+    strategy: "jwt",
+    maxAge: 7 * 24 * 60 * 60,
+  },
+  jwt: {
+    secret: process.env.NEXTAUTH_SECRET,
+  },
 
 callbacks: {
+  async jwt({ token, user }) {
+      // When user logs in, attach role and id to token
+      if (user) {
+        token.role = user.role;
+        token._id = user._id;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      // Attach role and id to session object
+      if (token) {
+        session.user.role = token.role;
+        session.user._id = token._id;
+      }
+      return session;
+    },
+    
   // Sign In Callback
   async signIn({ user, account }) {
     if (account) {
