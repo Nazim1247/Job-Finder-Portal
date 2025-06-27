@@ -7,7 +7,7 @@ A full-featured job portal web application that allows users to search and apply
 ## 🚀 Live Demo
 
 🔗 [Live Website](https://your-live-link.com)  
-📁 [Repository](https://github.com/yourname/job-finder-client)  
+📁 [Repository]https://github.com/Nazim1247/Job-Finder-Portal  
 
 ---
 
@@ -52,14 +52,8 @@ A full-featured job portal web application that allows users to search and apply
 
 ---
 
-## 📷 Screenshots
-
-> Add 3–5 screenshots of your app (home page, resume builder, job search, admin panel)
-
----
-
 ## 📦 Getting Started
 
 ### Clone Repositories
 ```bash
-git clone https://github.com/yourname/job-finder-client
+git clone https://github.com/Nazim1247/Job-Finder-Portal
