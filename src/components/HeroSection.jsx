@@ -35,12 +35,12 @@ export default function HeroSection() {
             >
               🔍 Browse Jobs
             </Link>
-            <a
+            {/* <a
               href="/resume-builder"
               className="bg-green-600 text-white hover:bg-green-700 px-6 md:px-2 py-3 rounded-lg transition animate-pulse"
             >
               📝 Build Resume
-            </a>
+            </a> */}
           </div>
         </motion.div>
 

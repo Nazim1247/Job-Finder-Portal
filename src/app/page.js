@@ -21,7 +21,7 @@ export default function Home() {
       <OurMission />
       <ContactForm />
       <NewsletterSignup />
-      <ResumePromo />
+      {/* <ResumePromo /> */}
     </div>
   );
 }

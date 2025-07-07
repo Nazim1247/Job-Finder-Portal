@@ -47,7 +47,7 @@ const JobCard = ({ job }) => {
         <h2 className="text-xl font-bold">
           {job.jobTitle}
         </h2>
-        <p className="text-sm text-gray-500 dark:text-gray-300">
+        <p className="text-sm">
           {job.company}
         </p>
       </div>

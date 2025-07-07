@@ -158,7 +158,7 @@ export default function FeaturedJobs() {
         ))}
       </div>
 
-      <div className="w-2/3 md:w-1/6 mx-auto mt-4">
+      <div className="w-2/3 md:w-1/4 lg:w-1/6 mx-auto mt-4">
         <Link href={"/findJobs"} className="bg-gray-300 text-indigo-600 border border-indigo-600 px-6 py-3 rounded-lg hover:bg-gray-400 transition flex items-center gap-4 animate-pulse">View All Jobs <span><FaArrowRightToBracket className="mt-1"/></span></Link>
       </div>
     </section>
