@@ -13,7 +13,7 @@ export default function Home() {
     <div className="min-h-80">
       <HeroSection />
       <CategoryFilter />
-      
+      <LatestJobs />
       <FeaturedJobs />
       <Testimonials />
       <AboutUs />

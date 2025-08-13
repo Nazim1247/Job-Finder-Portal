@@ -1,14 +1,16 @@
 "use client";
 import { useParams, useSearchParams, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSession } from "next-auth/react";
 import toast from "react-hot-toast";
 
 const ApplyPage = () => {
   const { id } = useParams();
   const searchParams = useSearchParams();
   const router = useRouter();
+  const { data: session } = useSession();
 
-  const jobTitle = searchParams.get("jobTitle");
+  const jobTitle = searchParams.get("title");
   const company = searchParams.get("company");
   const location = searchParams.get("location");
   const salary = searchParams.get("salary");
@@ -20,6 +22,16 @@ const ApplyPage = () => {
     resumeLink: "",
     coverLetter: "",
   });
+
+  useEffect(() => {
+    if (session?.user) {
+      setFormData((prev) => ({
+        ...prev,
+        fullName: session.user.name || "",
+        email: session.user.email || "",
+      }));
+    }
+  }, [session]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -49,7 +61,9 @@ const ApplyPage = () => {
   return (
     <div className="bg-color max-w-xl mx-auto p-6 rounded-2xl shadow hover:shadow-lg transition-all duration-300 my-4">
       <h2 className="text-xl text-center font-bold mb-4">Apply for {jobTitle}</h2>
-      <p className="text-center text-sm text-gray-500 mb-4">{company} — {location}</p>
+      <p className="text-center text-sm text-gray-500 mb-4">
+        {company} — {location}
+      </p>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           className="w-full border px-4 py-2 rounded"
@@ -58,6 +72,7 @@ const ApplyPage = () => {
           value={formData.fullName}
           onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
           required
+          readOnly
         />
         <input
           className="w-full border px-4 py-2 rounded"
@@ -66,6 +81,7 @@ const ApplyPage = () => {
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           required
+          readOnly
         />
         <input
           className="w-full border px-4 py-2 rounded"
@@ -82,7 +98,10 @@ const ApplyPage = () => {
           value={formData.coverLetter}
           onChange={(e) => setFormData({ ...formData, coverLetter: e.target.value })}
         />
-        <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">
+        <button
+          type="submit"
+          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full"
+        >
           Submit Application
         </button>
       </form>

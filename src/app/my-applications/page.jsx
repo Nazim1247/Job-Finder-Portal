@@ -10,17 +10,18 @@ const MyApplicationsPage = () => {
 
   useEffect(() => {
     const fetchApplications = async () => {
-      if (!session?.user?.email) return;
-
+      if (!session) return;
       setLoading(true);
+
       try {
-        const res = await fetch(`/api/applications?email=${encodeURIComponent(session.user.email)}`);
+        const res = await fetch("/api/applications");
         if (!res.ok) throw new Error("Failed to fetch");
         const data = await res.json();
         setApplications(data);
       } catch (error) {
         console.error(error);
       }
+
       setLoading(false);
     };
 
@@ -28,9 +29,8 @@ const MyApplicationsPage = () => {
   }, [session]);
 
   if (status === "loading" || loading) return <p className="text-center">Loading...</p>;
-
   if (!session) return <p className="text-center">Please log in to view your applications.</p>;
-
+console.log(applications);
   return (
     <div className="min-h-80 max-w-4xl mx-auto my-4 rounded-lg shadow-lg p-6 transition-all duration-300">
   <h1 className="text-3xl font-extrabold mb-8 text-center text-indigo-600">My Job Applications</h1>

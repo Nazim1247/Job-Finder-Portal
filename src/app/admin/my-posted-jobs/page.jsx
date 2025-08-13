@@ -1,6 +1,4 @@
 "use client";
-
-// import JobCard from "@/components/JobCard";
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import { Briefcase } from "lucide-react";
@@ -62,7 +60,6 @@ const MyPostedJobsPage = () => {
       {jobs.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {jobs.map((job) => (
-            // <JobCard key={job._id} job={job} />
             <div key={job._id} className="bg-color rounded-xl shadow p-6 hover:shadow-lg transition-all duration-300">
       <div className="mb-4">
         <h2 className="text-xl font-bold">
@@ -94,10 +91,10 @@ const MyPostedJobsPage = () => {
         </p>
         
       </div>
-      <div className="space-x-2 mt-4">
-        <Link href={`/api/jobs/${job._id}`}>
+      <div className="space-x-2 mt-4 flex justify-between items-center">
+        {/* <Link href={`/api/jobs/${job._id}`}>
   <button className="bg-blue-600 text-white text-sm px-2 md:px-4 py-1.5 rounded hover:bg-blue-700 transition">View Details</button>
-</Link>
+</Link> */}
 <Link href={`/my-posted/edit/${job._id}`}>
   <button className="bg-yellow-500 text-white px-2 md:px-4 py-1 rounded">Update</button>
 </Link>

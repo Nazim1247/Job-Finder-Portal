@@ -15,8 +15,8 @@ const Navbar = () => {
     { name: "Find Jobs", href: "/findJobs" },
     { name: "Saved Jobs", href: "/saved-jobs" },
     { name: "My Applications", href: "/my-applications" },
-    { name: "About Us", href: "/#about" },
-    { name: "Contact Us", href: "/#contact" },
+    { name: "About Us", href: "/about" },
+    { name: "Contact Us", href: "/contact" },
   ];
 
   const generateLinkClass = (href) =>

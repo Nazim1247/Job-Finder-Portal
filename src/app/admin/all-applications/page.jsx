@@ -25,7 +25,7 @@ const AllApplicationsPage = () => {
     <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {applications.map((app) => (
         <li key={app._id} className="bg-color p-5 rounded-lg shadow hover:shadow-xl">
-          <p><strong>Applicant Name:</strong> {app.applicantName}</p>
+          <p><strong>Applicant Name:</strong> {app.fullName}</p>
           <p><strong>Email:</strong> {app.email}</p>
           <p><strong>Job ID:</strong> {app.jobId}</p>
           <p><strong>Company:</strong> {app.jobCompany}</p>
