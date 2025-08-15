@@ -1,8 +1,8 @@
 import { getServerSession } from "next-auth";
-import { authOptions } from "../../auth/[...nextauth]/route";
 import { ObjectId } from "mongodb";
 import { NextResponse } from "next/server";
 import dbConnect, { collectionNameObj } from "@/lib/dbConnect";
+import { authOptions } from "@/lib/authOptions";
 
 export async function DELETE(req, { params }) {
   try {

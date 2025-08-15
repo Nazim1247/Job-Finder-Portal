@@ -10,12 +10,7 @@ const ApplyPage = () => {
   const router = useRouter();
   const { data: session } = useSession();
 
-  const jobTitle = searchParams.get("title");
-  const company = searchParams.get("company");
-  const location = searchParams.get("location");
-  const salary = searchParams.get("salary");
-  const description = searchParams.get("description");
-
+  const [job, setJob] = useState(null);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -23,6 +18,16 @@ const ApplyPage = () => {
     coverLetter: "",
   });
 
+  // Step 1: Static params check
+  const jobTitle = searchParams.get("title");
+  const company = searchParams.get("company");
+  const location = searchParams.get("location");
+  const salary = searchParams.get("salary");
+  const description = searchParams.get("description");
+
+  const isStaticJob = jobTitle && company;
+
+  // Step 2: Set user info
   useEffect(() => {
     if (session?.user) {
       setFormData((prev) => ({
@@ -33,19 +38,61 @@ const ApplyPage = () => {
     }
   }, [session]);
 
+  // Step 3: Fetch dynamic job if not static
+  useEffect(() => {
+    if (!isStaticJob) {
+      const fetchJob = async () => {
+        try {
+          const res = await fetch(`/api/jobs/${id}`);
+          if (!res.ok) throw new Error("Failed to fetch job");
+          const data = await res.json();
+          setJob(data);
+        } catch (error) {
+          console.error(error);
+          toast.error("Job not found");
+          router.push("/findJobs");
+        }
+      };
+      fetchJob();
+    } else {
+      // Static job data set
+      setJob({
+        title: jobTitle,
+        company,
+        location,
+        salary,
+        description,
+      });
+    }
+  }, [id, isStaticJob]);
+
+  // Step 4: Submit application
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const jobData = isStaticJob
+      ? {
+          jobTitle,
+          jobCompany: company,
+          jobLocation: location,
+          jobSalary: salary,
+          jobDescription: description,
+        }
+      : {
+          jobTitle: job?.jobTitle,
+          jobCompany: job?.company,
+          jobLocation: job?.location,
+          jobSalary: job?.salary,
+          jobDescription: job?.description,
+        };
+
     const res = await fetch("/api/applications", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         ...formData,
         jobId: id,
-        jobTitle,
-        jobCompany: company,
-        jobLocation: location,
-        jobSalary: salary,
-        jobDescription: description,
+        ...jobData,
       }),
     });
 
@@ -58,29 +105,25 @@ const ApplyPage = () => {
     }
   };
 
+  if (!job) return <p className="text-center mt-10">Loading job...</p>;
+
   return (
     <div className="bg-color max-w-xl mx-auto p-6 rounded-2xl shadow hover:shadow-lg transition-all duration-300 my-4">
-      <h2 className="text-xl text-center font-bold mb-4">Apply for {jobTitle}</h2>
+      <h2 className="text-xl text-center font-bold mb-4">Apply for {job.title}</h2>
       <p className="text-center text-sm text-gray-500 mb-4">
-        {company} — {location}
+        {job.company} — {job.location}
       </p>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           className="w-full border px-4 py-2 rounded"
           type="text"
-          placeholder="Your Full Name"
           value={formData.fullName}
-          onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-          required
           readOnly
         />
         <input
           className="w-full border px-4 py-2 rounded"
           type="email"
-          placeholder="Your Email"
           value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          required
           readOnly
         />
         <input
